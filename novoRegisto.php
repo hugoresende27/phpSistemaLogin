@@ -8,14 +8,17 @@
 ?>
 
 <body>
-    <div id="formBody">
-        <h1>Login</h1>
+    <div id="formBodyReg">
+        <h1>Register</h1>
 
         <form action="process.php" method="POST">
+
+            <input type="text" placeholder="Full name">
+            <input type="tel" placeholder="Phone">
             <input type="email" placeholder="Username">
             <input type="password"  placeholder="Password">
-            <input type="submit" value="ACCESS">
-            <a href="novoRegisto.php" class="reg">Not registered yet? <strong> Sign in </strong></a>
+            <input type="password"  placeholder="Confirm Password">
+            <input type="submit" value="REGIST">
 
         </form>
     </div>
