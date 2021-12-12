@@ -21,6 +21,11 @@
 body
 {
     /* background-color: var(--charcoal-cor); */
+    background-image: url('../img/fundo.jpg');
+    /* background-position: 50% 70%; */
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Inconsolata',sans-serif;
     color: white;
     /* font-weight: 800;  */
     /*display: flex;          /*coloca tudo em linha*/
