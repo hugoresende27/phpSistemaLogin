@@ -30,7 +30,7 @@ Class User{
         $sql->execute();
         if ($sql->rowCount() > 0 )
         {
-            return false; //JA EXISTE EMAIL, SEM SUCESSO
+            return false; //JA EXISTE EMAIL, SEM SUCESSO///////////////////////////
         }
         //CASO NÃO EXISTA AINDA O EMAIL, VAI REGISTAR
         else 
@@ -41,9 +41,9 @@ Class User{
             $sql->bindValue(":n",$nome);
             $sql->bindValue(":t",$tel);
             $sql->bindValue(":e",$email);
-            $sql->bindValue(":s",$senha);
+            $sql->bindValue(":s",md5($senha));
             $sql->execute();
-            return true; //SUCESSO NO REGISTO
+            return true; //SUCESSO NO REGISTO///////////////////////////////////
         }
 
     }
@@ -51,6 +51,26 @@ Class User{
     ///////////////////////LOGAR///////////////////////////////
     public function logar($email,$senha){
         global $pdo;
+        //VERIFICAR SE EMAIL E SENHA EXISTEM
+        $sql = $pdo ->prepare("
+            SELECT id_user FROM users WHERE email = :e AND senha = :s
+        ");
+        $sql->bindValue(":e",$email);
+        $sql->bindValue(":s",md5($senha));
+        $sql->execute();
+        if ($sql->rowCount() >0)
+        {
+            //ENTRAR NO SISTEMA, CRIAR SESSÃO
+            $dado = $sql->apc_fetch(); //transforma num array com os nomes das colunas o q veio no sql
+            session_start();
+            $_SESSION['id_user'] = $dado['id_user'];
+            return true; // LOGIN COM SUCESSO///////////////////////////////////////
+        }
+        else 
+        {   
+            return false; //LOGIN FALHADO///////////////////////////////////////////
+        }
+        
 
     }
 }

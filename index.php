@@ -11,7 +11,7 @@
     <div id="formBody">
         <h1>Login</h1>
 
-        <form action="process.php" method="POST">
+        <form method="POST">
             <input type="email" name="email" placeholder="Username">
             <input type="password" name="senha"  placeholder="Password">
             <input type="submit" value="ACCESS">
