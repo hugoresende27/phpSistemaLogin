@@ -35,7 +35,7 @@ Class User{
         //CASO NÃO EXISTA AINDA O EMAIL, VAI REGISTAR
         else 
         {
-            $sql= $pdo->prepare("INSERT INTO users ('nome','telefone','email','senha') 
+            $sql= $pdo->prepare("INSERT INTO users (nome,telefone,email,senha) 
                                             VALUES (:n,:t,:e,:s)
             ");
             $sql->bindValue(":n",$nome);
@@ -43,6 +43,8 @@ Class User{
             $sql->bindValue(":e",$email);
             $sql->bindValue(":s",md5($senha));
             $sql->execute();
+            
+            
             return true; //SUCESSO NO REGISTO///////////////////////////////////
         }
 
@@ -64,10 +66,12 @@ Class User{
             $dado = $sql->apc_fetch(); //transforma num array com os nomes das colunas o q veio no sql
             session_start();
             $_SESSION['id_user'] = $dado['id_user'];
+            
             return true; // LOGIN COM SUCESSO///////////////////////////////////////
         }
         else 
         {   
+            
             return false; //LOGIN FALHADO///////////////////////////////////////////
         }
         

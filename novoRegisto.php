@@ -20,8 +20,11 @@
             <input type="password"  name="senha" placeholder="Password" maxlength="15">
             <input type="password"  name="confSenha" placeholder="Confirm Password" maxlength="15">
             <input type="submit" value="REGIST">
-
+           
         </form>
+        <div class="text-center">
+            <a class="btn btn-info" href="index.php">HOME</a>
+        </div>
     </div>
 
 <?php 
@@ -46,7 +49,9 @@ if (isset($_POST['nome'])) {
             if ($senha == $confSenha){
                 if($u->registar($nome,$tel,$email,$senha)){
                     echo "Registo com sucesso, faça login agora";
-                    print_r($u);
+                    
+                    
+                    
                 } else {
                     echo "Email já registado!";
                 }
