@@ -48,25 +48,48 @@ if (isset($_POST['nome'])) {
         {
             if ($senha == $confSenha){
                 if($u->registar($nome,$tel,$email,$senha)){
-                    echo "Registo com sucesso, faça login agora";
-                    
+                   
+                    ?>
+                    <div id="msgSuc">
+                        Registo com sucesso, faça login agora
+                     </div>
+                    <?php
                     
                     
                 } else {
-                    echo "Email já registado!";
+                    ?>
+                    <div class="msgE">
+                        E-mail já registado !
+                     </div>
+                    <?php
                 }
             } else {
-                echo "Senha e confirmar senha diferentes!! ";
+
+                ?>
+                <div class="msgE">
+                    Senha e confirmar senha diferentes!! 
+                 </div>
+                <?php
+                
             }
             
         }
         else
         {
-            echo "ERRO ".$u->msgErro;
+            ?>
+            <div class="msgE">
+                 <?php   echo "ERRO ".$u->msgErro; ?>
+                </div>
+            <?php
         }
 
     } else {
-        echo "Preencha todos os campos!";
+        echo "TESTE";
+        ?>
+        <div class="msgE">
+            Preencha todos os campos!
+         </div>
+        <?php
     }
 
 }
