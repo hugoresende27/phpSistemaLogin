@@ -50,7 +50,7 @@ if (isset($_POST['nome'])) {
                 if($u->registar($nome,$tel,$email,$senha)){
                    
                     ?>
-                    <div id="msgSuc">
+                    <div class="msgSuc">
                         Registo com sucesso, faça login agora
                      </div>
                     <?php
@@ -84,7 +84,8 @@ if (isset($_POST['nome'])) {
         }
 
     } else {
-        echo "TESTE";
+       
+        
         ?>
         <div class="msgE">
             Preencha todos os campos!
@@ -97,4 +98,3 @@ if (isset($_POST['nome'])) {
 
 
 ?>
-</body>

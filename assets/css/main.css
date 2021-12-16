@@ -119,14 +119,23 @@ footer {
     border-radius: 50%;
 }
 
-div#msgSuc{
-    width: 420px;
-    margin: 10px auto;
+div.msgSuc{
+  
+    padding: 10px;
+    background-color: rgba(113, 250, 170, 0.3);
+    border: 1px solid rgb(77, 165, 42);
+    width: 400px;
+    margin: -600px auto;
 }
 
+
 div.msgE{
-    width: 420px;
-    margin: 10px auto;
+  
+    padding: 10px;
+    background-color: rgba(250,128,113,0.3);
+    border: 1px solid rgba(165,42,42);
+    width: 400px;
+    margin: -600px auto;
 }
 
 

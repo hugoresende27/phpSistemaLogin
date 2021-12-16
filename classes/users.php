@@ -63,7 +63,8 @@ Class User{
         if ($sql->rowCount() >0)
         {
             //ENTRAR NO SISTEMA, CRIAR SESSÃO
-            $dado = $sql->apc_fetch(); //transforma num array com os nomes das colunas o q veio no sql
+            $dado = $sql->fetch(); //transforma num array com os nomes das colunas o q veio no sql
+            
             session_start();
             $_SESSION['id_user'] = $dado['id_user'];
             
