@@ -52,7 +52,7 @@ if (isset($_POST['nome'])) {
                     ?>
                     <div class="msgSuc">
                         Registo com sucesso, faça login agora
-                     </div>
+                     </div>A
                     <?php
                     
                     
